@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ByCssSelector {
@@ -115,6 +117,26 @@ public class ByCssSelector {
          */
 
     }
+    /*
+    we want to locate elements based on only the specific attribute defined for them
+    but not attribute values.
+    For example, we want to lookup all the <img> elements which have alt attribute specified.
+     */
+    @Test
+    public void testAttributeNameOnly(){
+        driver.get(
+                "http://cookbook.seleniumacademy.com/Locators.html");
+        List<WebElement> imagesWithAlt = driver.findElements(By.cssSelector("img[alt]"));
+        /*
+        A Boolean not()pseudo-class can also be used to locate elements
+        not matching the specified criteria.
+        For example, to locate all the <img> elements that do not have the alt attribute,
+        the following method can be used:
+         */
+        List<WebElement> imagesWithoutAlt = driver.findElements(By.cssSelector("img:not([alt])"));
+
+
+    }
     @Test
     public void testByCssSelectorAdvanced(){
         driver.get(
@@ -130,3 +152,4 @@ public class ByCssSelector {
         driver.quit();
     }
 }
+
