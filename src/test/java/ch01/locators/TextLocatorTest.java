@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TextTest {
+public class TextLocatorTest {
     /*
     locating elements based on their text contents.
     This approach comes in handy when elements don't have enough attributes
