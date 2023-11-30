@@ -147,6 +147,11 @@ public class ByCssSelector {
         WebElement checkbox1 = driver.findElement(By.cssSelector("[type=checkbox]:not(:checked)"));
         assertThat(checkbox1.isSelected()).isFalse();
     }
+    /*
+    :checked
+    :enabled
+    :disabled
+     */
     @After
     public void teardown(){
         driver.quit();
