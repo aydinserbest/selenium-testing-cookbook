@@ -1,6 +1,7 @@
 package ch01.locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -31,5 +32,9 @@ public class XpathLocatorTest {
                 "http://cookbook.seleniumacademy.com/Locators.html");
         WebElement userName = driver.findElement(By.xpath("//input[@*='username']"));
 
+    }
+    @After
+    public void teardown(){
+        driver.quit();
     }
 }

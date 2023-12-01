@@ -1,6 +1,7 @@
 package ch01.locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -32,7 +33,7 @@ public class TextLocatorTest {
     and the contains() function checks for the specific value that we have mentioned.
      */
     @Test
-    public void testValue() {
+    public void testTextLocator() {
         driver.get(
                 "http://cookbook.seleniumacademy.com/Locators.html");
         WebElement cell = driver.findElement(By.xpath("//td[contains(text(),'Item 1')]"));
@@ -47,5 +48,9 @@ public class TextLocatorTest {
     contains requires (string, string)
     //td[contains(.,'Item 1')]
      */
+    @After
+    public void teardown(){
+        driver.quit();
+    }
 
 }

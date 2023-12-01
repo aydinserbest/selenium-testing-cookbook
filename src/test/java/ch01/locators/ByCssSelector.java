@@ -9,10 +9,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ByCssSelector {
     WebDriver driver;
@@ -137,6 +142,28 @@ public class ByCssSelector {
 
 
     }
+    @Test
+    public void test_attributeName_select(){
+        driver.get(
+                "https://bonigarcia.dev/selenium-webdriver-java/web-form.html");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement selectedOption = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("select option[selected]")));
+        System.out.println(selectedOption.getText());
+        assertThat(selectedOption.getText()).isEqualTo("Open this select menu");
+        //assertEquals(selectedOption.getText(), "Open this select menu");
+    }
+    @Test
+    public void test_attributeName_select2() {
+        driver.get(
+                "https://the-internet.herokuapp.com/dropdown");
+        WebElement selectedOption = driver.findElement(By.cssSelector("select option[selected='selected']"));
+        System.out.println(selectedOption.getText());
+        selectedOption.click();
+        assertThat(selectedOption.getAttribute("selected")).isEqualTo("true");
+        assertTrue(selectedOption.isSelected());
+        assertEquals("true", selectedOption.getAttribute("selected"));
+    }
+
     @Test
     public void testByCssSelectorAdvanced(){
         driver.get(
