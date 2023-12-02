@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Tables_Test {
     WebDriver driver;
@@ -42,10 +43,46 @@ public class Tables_Test {
             System.out.println();
         }
     }
-    /*
-    A table in HTML is a collection of <tr> and <td> elements for rows and cells, respectively.
+    @Test
+    public void tesTable_cssSelector() {
+        driver.get(
+                "http://cookbook.seleniumacademy.com/Locators.html");
+        // Locate the first cell of the second row using CSS selector
+        WebElement cell = driver.findElement(By.cssSelector("table#items tbody tr:nth-child(2) td"));
+        System.out.println("Data in the first cell of the second row: " + cell.getText());
 
-     */
+    }@Test
+    public void tesTable_xpath() {
+        driver.get(
+                "http://cookbook.seleniumacademy.com/Locators.html");
+        // Locate the first cell of the second row using xpath
+        WebElement cell = driver.findElement(By.xpath("//table[@id='items']/tbody/tr[2]/td"));
+        System.out.println("Data in the first cell of the second row: " + cell.getText());
+    }
+    @Test
+    public void tesTable_Better_Approach() {
+        driver.get(
+                "http://cookbook.seleniumacademy.com/Locators.html");
+
+        //First, find the td containing Nash's name
+        WebElement nashRow = driver.findElement(By.xpath("//td[text()='Nash']"));
+
+        //Find the checkbox in Nash's row that corresponds to 'Admin' access
+        WebElement adminCheckbox = nashRow.findElement(By.xpath("following-sibling::td//input[@id='user128_admin']"));
+
+        //Perform a checkbox check
+        boolean isAdminChecked = adminCheckbox.isSelected();
+
+        //Test verification
+        assertTrue("Nash should have admin access", isAdminChecked);
+    /*
+    This code finds the "Admin" checkbox for Nash
+    by first locating the td element containing Nash's name
+    and then accessing the checkbox with the ID user128_admin in the same row.
+    This method ensures the correct checkbox is identified, even in situations
+    where the checkbox ID is not directly correlated with the user's name.
+         */
+    }
     @After
     public void teardown(){
         driver.quit();
