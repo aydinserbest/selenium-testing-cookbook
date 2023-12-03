@@ -60,7 +60,7 @@ public class Tables_Test {
         System.out.println("Data in the first cell of the second row: " + cell.getText());
     }
     @Test
-    public void tesTable_Better_Approach() {
+    public void testTable_Better_Approach() {
         driver.get(
                 "http://cookbook.seleniumacademy.com/Locators.html");
 

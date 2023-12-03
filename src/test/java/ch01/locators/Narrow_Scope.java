@@ -78,7 +78,36 @@ public class Narrow_Scope {
 
         //Find the checkbox in Nash's row that corresponds to 'Admin' access
         WebElement adminCheckbox = nashRow.findElement(By.xpath("following-sibling::td//input[@id='user128_admin']"));
+       /*
+    This line of code operates on a previously located WebElement named nashRow.
+    nashRow represents a <td> element containing the text "Nash".
+    The method nashRow.findElement is used to find another element
+    within the context of this specific WebElement.
 
+    following-sibling::td:
+    This XPath expression begins a search among the siblings of nashRow.
+    By using the following-sibling axis, it finds <td> elements within the same <tr> element as nashRow,
+    but following it.
+    //input[@id='user128_admin']:
+    Within these identified <td> elements, it looks for an input element with the id attribute
+    set to "user128_admin".
+    This expression is used to locate the input element with the ID "user128_admin"
+    within the same row (<tr>) as nashRow, specifically in the <td> elements that follow nashRow.
+    As nashRow itself is a <td>, the following-sibling::td part
+    navigates to subsequent <td> elements in the same row (<tr>).
+
+    This approach confines the search to the row where nashRow is located,
+    avoiding a broader search scope. It's a more precise and targeted strategy for locating the desired element.
+        */
+
+        /*
+        What you're trying to do above is
+        narrow down the scope to find another WebElement within a WebElement.
+
+        we can re-write it without scope narrowing:
+
+        WebElement adminCheckbox = driver.findElement(By.xpath("//td[text()='Nash']/ancestor::tr//input[@id='user128_admin']"));
+        */
         //Perform a checkbox check
         boolean isAdminChecked = adminCheckbox.isSelected();
 
