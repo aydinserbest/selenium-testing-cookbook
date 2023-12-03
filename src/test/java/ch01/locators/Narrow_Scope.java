@@ -99,6 +99,21 @@ public class Narrow_Scope {
     This approach confines the search to the row where nashRow is located,
     avoiding a broader search scope. It's a more precise and targeted strategy for locating the desired element.
         */
+        /*
+        When you use the statement nashRow.findElement(By.xpath("following-sibling::td//input[@id='user128_admin']")),
+        it starts the search based on the context of nashRow.
+        Since nashRow already represents a <td> element, the XPath expression can begin directly
+        with following-sibling::td instead of starting with something like //td....
+
+    Using nashRow.findElement, the XPath expression within this method is
+    evaluated starting from the position of the nashRow element.
+    Therefore, you don't need to specify the full path to reach the sibling elements (following-sibling).
+    The XPath expression operates as if it's starting from where nashRow is located (<td>),
+    and then following-sibling::td is used to access the sibling <td> elements in the same row (<tr>).
+
+    This creates a more focused search area, limited only to the elements within the same row as nashRow,
+    thus making it a more precise and targeted search within the row
+         */
 
         /*
         What you're trying to do above is
