@@ -29,7 +29,7 @@ public class LinkTextTests {
 		driver = new ChromeDriver();
 		// Maximize the browser window
 		driver.manage().window().maximize();
-		// Navigate to Google
+		// Navigate to
 		driver.get("http://cookbook.seleniumacademy.com/Locators.html");
 	}
 	/*

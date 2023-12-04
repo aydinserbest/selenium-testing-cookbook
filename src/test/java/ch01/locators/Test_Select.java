@@ -63,7 +63,7 @@ public class Test_Select {
         WebElement selectElement = driver.findElement(By.cssSelector("select[name='my-select']"));
         Select select = new Select(selectElement);
 
-        // İkinci option'ı seç
+        // choose second option
         select.selectByIndex(1);  // Index starts from 0, hence 1 corresponds to the 'One' option."
 
         // Get and check the value of the selected option."

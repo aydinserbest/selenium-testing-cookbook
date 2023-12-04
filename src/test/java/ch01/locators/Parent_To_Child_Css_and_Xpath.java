@@ -118,4 +118,5 @@ public class Parent_To_Child_Css_and_Xpath {
         //Test verification
         assertTrue("Nash should have admin access", isAdminChecked);
     }
+
 }
