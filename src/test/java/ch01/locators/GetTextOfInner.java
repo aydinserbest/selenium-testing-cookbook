@@ -1,15 +1,14 @@
-package ch01.locators.html;
+package ch01.locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 
-public class UsingFile {
+public class GetTextOfInner {
     WebDriver driver;
     String fileUrl;
     @BeforeClass
@@ -19,9 +18,7 @@ public class UsingFile {
     @Before
     public void setup(){
         driver = new ChromeDriver();
-        getFileUrl("yourFileName.html"); // Replace with your actual file name
     }
-
     private String getFileUrl(String fileName) {
         File file = new File(fileName);
         if (file.exists()) {
@@ -29,17 +26,5 @@ public class UsingFile {
         } else {
             throw new RuntimeException("File not found: " + fileName);
         }
-    }
-
-    @Test
-    public void utilizeNearby() {
-        driver.get(fileUrl);
-        // ... Test codes
-    }
-
-    @Test
-    public void useavaScript() {
-        driver.get(fileUrl);
-        // ... Test codes
     }
 }
