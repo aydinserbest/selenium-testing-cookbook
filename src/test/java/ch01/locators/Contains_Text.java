@@ -14,6 +14,10 @@ import static org.junit.Assert.assertTrue;
 
 public class Contains_Text {
     /*
+    While testing a web application,
+    we need to verify that elements are displaying correct values or text on the page.
+     */
+    /*
    locating elements based on their text contents.
    This approach comes in handy when elements don't have enough attributes
    or when no other strategies work when attempting to locate these elements.

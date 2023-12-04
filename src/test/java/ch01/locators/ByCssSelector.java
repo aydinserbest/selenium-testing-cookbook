@@ -183,5 +183,14 @@ public class ByCssSelector {
     public void teardown(){
         driver.quit();
     }
+    /*
+    Developers configure various attributes of elements displayed on the web page
+    during design or at runtime to control the behavior or style of elements
+    when they are displayed in the browser.
+    For example, the <input> element can be set to read-only by setting the readonly attribute.
+    There will be tests that need to verify that element attributes are set correctly.
+    We can retrieve and verify an element's attribute
+    by using the getAttribute() method of the WebElement class.
+     */
 }
 
