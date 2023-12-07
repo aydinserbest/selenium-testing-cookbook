@@ -40,7 +40,7 @@ public class RowSelection {
     }
     //test the selection of multiple rows on a web page using the Ctrl key:
     @Test
-    public void testCTRL() {
+    public void testUsingControlKey() {
         driver.get(fileUrl);
         List<WebElement> tableRows = driver.findElements(By.xpath("//table[@class='iceDatTbl']/tbody/tr"));
 
