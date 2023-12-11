@@ -1,4 +1,4 @@
-package ch01.locators;
+package ch01.locators.user_gestures;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -18,7 +18,7 @@ import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ActionsPerform {
+public class Hover_Test {
     WebDriver driver;
     @BeforeClass
     public static void setupClass(){
