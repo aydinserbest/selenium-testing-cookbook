@@ -1,4 +1,4 @@
-package ch01.locators.keyboardEvents;
+package ch01.locators.user_gestures;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.SystemUtils;
@@ -18,7 +18,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class RowSelection {
+public class KeyboardEvents_Test {
     WebDriver driver;
     String fileUrl;
 
